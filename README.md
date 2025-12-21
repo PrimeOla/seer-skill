@@ -3,6 +3,7 @@
 Visual feedback capture skill for macOS app windows.
 
 [![release](https://img.shields.io/github/v/release/w00ing/seer-skill)](https://github.com/w00ing/seer-skill/releases)
+[![license](https://img.shields.io/github/license/w00ing/seer-skill)](https://github.com/w00ing/seer-skill/blob/main/LICENSE)
 
 ## Support
 
