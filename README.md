@@ -4,6 +4,10 @@ Visual feedback capture skill for macOS app windows.
 
 [![release](https://img.shields.io/github/v/release/w00ing/seer-skill)](https://github.com/w00ing/seer-skill/releases)
 
+## Support
+
+- macOS only
+
 ## Install
 
 Codex (skill-installer UI):
@@ -41,6 +45,18 @@ seer/scripts/capture_app_window.sh /tmp/promptlight.png "Promptlight"
 seer/scripts/capture_app_window.sh --help
 ```
 
+## Examples (prompts)
+
+- "Check the layout of the app and suggest UI fixes."
+- "Redesign this screen; take a screenshot first."
+- "Is the spacing on this window consistent?"
+
 ## Permissions
 
 - macOS Screen Recording + Accessibility for terminal
+
+## Troubleshooting
+
+- `error: window not found`: app not running, wrong process name, or no visible window.
+- Empty/black image: Screen Recording not granted to terminal.
+- Wrong window: pass exact process name (e.g. "Promptlight").
