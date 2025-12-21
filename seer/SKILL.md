@@ -15,6 +15,12 @@ Grab a precise screenshot of a visible app window and attach it for visual itera
    - `scripts/capture_app_window.sh /path/to/out.png "Promptlight"` (custom output + process name)
 3. Attach the image with `view_image`.
 
+## Usage
+- `scripts/capture_app_window.sh --help`
+- `scripts/capture_app_window.sh [out_path] [process_name]`
+  - `out_path` default `/tmp/app-window-shot.png`
+  - `process_name` default frontmost app
+
 ## Workflow
 1. **Capture**
    - `scripts/capture_app_window.sh`
