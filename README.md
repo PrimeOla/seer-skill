@@ -37,7 +37,8 @@ rsync -a /tmp/seer-skill/seer/ ~/.claude/skills/seer/
 
 - Skill name: `seer`
 - Script: `seer/scripts/capture_app_window.sh`
-- Default output: `/tmp/app-window-shot-YYYYMMDD-HHMMSS-<pid>-<rand>.png`
+- Default output: `/tmp/seer/app-window-shot-YYYYMMDD-HHMMSS-<pid>-<rand>.png`
+- Set `SEER_TMP_DIR` to change default output dir
 
 Examples:
 ```bash
