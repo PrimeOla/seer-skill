@@ -11,7 +11,9 @@ Visual feedback capture skill for macOS app windows.
 
 ## Demo
 
-<video src="assets/seer-demo.mov" controls muted playsinline></video>
+![seer demo](assets/seer-demo.gif)
+
+Full video: `assets/seer-demo.mov`
 
 ## Install
 
