@@ -9,6 +9,10 @@ Visual feedback capture skill for macOS app windows.
 
 - macOS only
 
+## Demo
+
+- `assets/seer-demo.mov`
+
 ## Install
 
 Codex (skill-installer UI):
