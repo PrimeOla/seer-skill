@@ -42,9 +42,9 @@ rsync -a /tmp/seer-skill/seer/ ~/.claude/skills/seer/
 
 Examples:
 ```bash
-seer/scripts/capture_app_window.sh
-seer/scripts/capture_app_window.sh /tmp/promptlight.png "Promptlight"
-seer/scripts/capture_app_window.sh --help
+bash seer/scripts/capture_app_window.sh
+bash seer/scripts/capture_app_window.sh /tmp/promptlight.png "Promptlight"
+bash seer/scripts/capture_app_window.sh --help
 ```
 
 ## Examples (prompts)
