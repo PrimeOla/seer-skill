@@ -15,6 +15,7 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 
 - Skill name: `seer`
 - Script: `seer/scripts/capture_app_window.sh`
+- Default output: `/tmp/app-window-shot-YYYYMMDD-HHMMSS-<pid>-<rand>.png`
 
 ## Manual install
 

@@ -11,14 +11,14 @@ Grab a precise screenshot of a visible app window and attach it for visual itera
 ## Quick start
 1. Ensure the target app is running and Screen Recording + Accessibility are enabled for your terminal.
 2. Run the script:
-   - `scripts/capture_app_window.sh` (defaults to the frontmost app, output `/tmp/app-window-shot.png`)
+   - `scripts/capture_app_window.sh` (defaults to frontmost app, output `/tmp/app-window-shot-YYYYMMDD-HHMMSS-<pid>-<rand>.png`)
    - `scripts/capture_app_window.sh /path/to/out.png "Promptlight"` (custom output + process name)
 3. Attach the image with `view_image`.
 
 ## Usage
 - `scripts/capture_app_window.sh --help`
 - `scripts/capture_app_window.sh [out_path] [process_name]`
-  - `out_path` default `/tmp/app-window-shot.png`
+  - `out_path` default `/tmp/app-window-shot-YYYYMMDD-HHMMSS-<pid>-<rand>.png`
   - `process_name` default frontmost app
 
 ## Workflow

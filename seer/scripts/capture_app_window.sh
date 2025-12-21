@@ -9,7 +9,7 @@ Usage:
   capture_app_window.sh [out_path] [process_name]
 
 Defaults:
-  out_path     /tmp/app-window-shot.png
+  out_path     /tmp/app-window-shot-YYYYMMDD-HHMMSS-<pid>-<rand>.png
   process_name frontmost app
 EOF
 }
@@ -19,7 +19,8 @@ if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
   exit 0
 fi
 
-out=${1:-/tmp/app-window-shot.png}
+ts=$(date +%Y%m%d-%H%M%S)
+out=${1:-/tmp/app-window-shot-${ts}-$$-$RANDOM.png}
 process=${2:-}
 
 if [[ -z "${process}" ]]; then
