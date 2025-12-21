@@ -6,19 +6,26 @@ Visual feedback capture skill for macOS app windows.
 
 ## Install
 
-Codex (skill-installer):
+Codex (skill-installer UI):
 - Run `$skill-installer`
 - Ask: install GitHub repo `w00ing/seer-skill` path `seer`
 
-CLI:
+Codex (CLI):
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo w00ing/seer-skill --path seer
 ```
 
-Claude Code plugin:
+Claude Code (plugin):
 - `/plugin marketplace add w00ing/seer-skill`
 - `/plugin install seer-skill@seer`
+
+Manual:
+```bash
+mkdir -p ~/.codex/skills
+git clone https://github.com/w00ing/seer-skill.git /tmp/seer-skill
+rsync -a /tmp/seer-skill/seer/ ~/.codex/skills/seer/
+```
 
 ## Use
 
@@ -26,10 +33,13 @@ Claude Code plugin:
 - Script: `seer/scripts/capture_app_window.sh`
 - Default output: `/tmp/app-window-shot-YYYYMMDD-HHMMSS-<pid>-<rand>.png`
 
-## Manual install
-
+Examples:
 ```bash
-mkdir -p ~/.codex/skills
-git clone https://github.com/w00ing/seer-skill.git /tmp/seer-skill
-rsync -a /tmp/seer-skill/seer/ ~/.codex/skills/seer/
+seer/scripts/capture_app_window.sh
+seer/scripts/capture_app_window.sh /tmp/promptlight.png "Promptlight"
+seer/scripts/capture_app_window.sh --help
 ```
+
+## Permissions
+
+- macOS Screen Recording + Accessibility for terminal
