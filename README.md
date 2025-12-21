@@ -10,12 +10,6 @@ Codex (skill-installer UI):
 - Run `$skill-installer`
 - Ask: install GitHub repo `w00ing/seer-skill` path `seer`
 
-Codex (CLI):
-```bash
-python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo w00ing/seer-skill --path seer
-```
-
 Claude Code (plugin):
 - `/plugin marketplace add w00ing/seer-skill`
 - `/plugin install seer-skill@seer`
