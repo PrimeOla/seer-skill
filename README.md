@@ -6,6 +6,11 @@ Visual feedback capture skill for macOS app windows.
 
 ## Install
 
+Codex (skill-installer):
+- Run `$skill-installer`
+- Ask: install GitHub repo `w00ing/seer-skill` path `seer`
+
+CLI:
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo w00ing/seer-skill --path seer
