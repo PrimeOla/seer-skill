@@ -39,25 +39,26 @@ Manual (Codex):
 ```bash
 mkdir -p ~/.codex/skills
 git clone https://github.com/w00ing/seer-skill.git /tmp/seer-skill
-rsync -a /tmp/seer-skill/seer/ ~/.codex/skills/seer/
+rsync -a /tmp/seer-skill/skills/seer/ ~/.codex/skills/seer/
 ```
 
 Manual (Claude Code):
 ```bash
 mkdir -p ~/.claude/skills
 git clone https://github.com/w00ing/seer-skill.git /tmp/seer-skill
-rsync -a /tmp/seer-skill/seer/ ~/.claude/skills/seer/
+rsync -a /tmp/seer-skill/skills/seer/ ~/.claude/skills/seer/
 ```
 
 ## Use
 
 - Skill name: `seer`
-- Script: `seer/scripts/capture_app_window.sh`
-- Script: `seer/scripts/type_into_app.sh`
-- Script: `seer/scripts/mockup_ui.sh`
-- Script: `seer/scripts/annotate_image.py`
+- Script: `skills/seer/scripts/capture_app_window.sh`
+- Script: `skills/seer/scripts/type_into_app.sh`
+- Script: `skills/seer/scripts/mockup_ui.sh`
+- Script: `skills/seer/scripts/annotate_image.py`
 - Default output: `.seer/captures/app-window-<app>-YYYYMMDD-HHMMSS-<pid>-<rand>.png`
 - Set `SEER_OUT_DIR` to change default output root (falls back to `SEER_TMP_DIR` for legacy behavior)
+- Installed paths (Codex/Claude Code): `~/.codex/skills/seer/scripts` or `~/.claude/skills/seer/scripts`
 
 ### Window capture
 
@@ -77,15 +78,15 @@ Every mockup run stores capture, spec, output, and metadata, plus a `latest/` co
 
 Examples:
 ```bash
-bash seer/scripts/capture_app_window.sh
-bash seer/scripts/capture_app_window.sh /tmp/promptlight.png "Promptlight"
-bash seer/scripts/capture_app_window.sh --help
-bash seer/scripts/type_into_app.sh --app "Promptlight" --text "hello" --enter
-bash seer/scripts/type_into_app.sh --app "Promptlight" --click-rel 120,180 --text "hello"
-bash seer/scripts/type_into_app.sh --text "hello" --no-activate
-bash seer/scripts/type_into_app.sh --bundle-id com.example.app --text -
-bash seer/scripts/mockup_ui.sh --spec spec.json
-python3 seer/scripts/annotate_image.py input.png output.png --spec spec.json
+bash skills/seer/scripts/capture_app_window.sh
+bash skills/seer/scripts/capture_app_window.sh /tmp/promptlight.png "Promptlight"
+bash skills/seer/scripts/capture_app_window.sh --help
+bash skills/seer/scripts/type_into_app.sh --app "Promptlight" --text "hello" --enter
+bash skills/seer/scripts/type_into_app.sh --app "Promptlight" --click-rel 120,180 --text "hello"
+bash skills/seer/scripts/type_into_app.sh --text "hello" --no-activate
+bash skills/seer/scripts/type_into_app.sh --bundle-id com.example.app --text -
+bash skills/seer/scripts/mockup_ui.sh --spec spec.json
+python3 skills/seer/scripts/annotate_image.py input.png output.png --spec spec.json
 ```
 
 Mockup spec example:

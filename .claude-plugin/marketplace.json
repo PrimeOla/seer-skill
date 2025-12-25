@@ -7,7 +7,7 @@
     {
       "name": "seer-skill",
       "description": "Visual feedback capture for macOS app windows.",
-      "source": "./seer"
+      "source": "./"
     }
   ]
 }
