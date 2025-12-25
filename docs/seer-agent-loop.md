@@ -20,7 +20,7 @@ Turn Seer into a tight, repeatable visual-feedback loop for an agent: capture UI
 - Failure heuristics: if no pixel change after action, re-plan (wrong window, modal blocking, action ignored).
 
 ## Minimal Agent-Friendly Workflow
-- Capture: `capture_app_window.sh` -> image
+- Capture: `skills/seer/scripts/capture_app_window.sh` -> image
 - OCR + parse for key labels/errors
 - Decide action
 - Perform action
@@ -28,9 +28,9 @@ Turn Seer into a tight, repeatable visual-feedback loop for an agent: capture UI
 - Diff and decide next step
 
 ## Script Ideas
-- `scripts/capture_and_ocr.sh`: capture + OCR + JSON report
-- `scripts/diff_last_two.sh`: compare last two captures, return changed?
-- `scripts/capture_region.sh`: capture by rect or named region
+- `skills/seer/scripts/capture_and_ocr.sh`: capture + OCR + JSON report
+- `skills/seer/scripts/diff_last_two.sh`: compare last two captures, return changed?
+- `skills/seer/scripts/capture_region.sh`: capture by rect or named region
 - `assets/` overlays/templates for common UI elements
 
 ## Open Questions (for scoping)
