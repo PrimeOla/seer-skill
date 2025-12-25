@@ -31,6 +31,7 @@ Codex (skill-installer UI):
 Claude Code (plugin):
 - `/plugin marketplace add w00ing/seer-skill`
 - `/plugin install seer-skill@seer`
+  - If the marketplace was previously added, run `/plugin marketplace update seer` before installing to pick up updates.
 
 Manual (Codex):
 ```bash
