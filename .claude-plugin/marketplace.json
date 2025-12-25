@@ -7,10 +7,7 @@
     {
       "name": "seer-skill",
       "description": "Visual feedback capture for macOS app windows.",
-      "source": {
-        "source": "github",
-        "repo": "w00ing/seer-skill"
-      }
+      "source": "./seer"
     }
   ]
 }
