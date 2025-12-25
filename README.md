@@ -59,6 +59,22 @@ rsync -a /tmp/seer-skill/seer/ ~/.claude/skills/seer/
 - Default output: `.seer/captures/app-window-<app>-YYYYMMDD-HHMMSS-<pid>-<rand>.png`
 - Set `SEER_OUT_DIR` to change default output root (falls back to `SEER_TMP_DIR` for legacy behavior)
 
+### Window capture
+
+Capture the frontmost app window (or a named process) as a precise PNG. Output is organized under `.seer/captures/` with app‑slugged filenames for easy tracking.
+
+### UI mockups (annotations)
+
+Create lightweight UI mockups by drawing arrows, rectangles, and text on a capture using a JSON spec. Output images live in `.seer/mockups/`, and the spec is saved alongside under `.seer/specs/`.
+
+### Visual diff loop
+
+Maintain baselines and compare current UI to previous snapshots with diffs and JSON reports. Useful for quick visual regressions or confirming UI changes.
+
+### Organized artifacts
+
+Every mockup run stores capture, spec, output, and metadata, plus a `latest/` copy per app slug for fast access.
+
 Examples:
 ```bash
 bash seer/scripts/capture_app_window.sh
