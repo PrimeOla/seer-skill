@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from __future__ import annotations
 import argparse
 import json
 import math
@@ -9,8 +10,44 @@ from typing import Dict, Optional
 try:
     from PIL import Image, ImageDraw, ImageFont
 except Exception:
-    print("error: Pillow is required. Install with: python3 -m pip install pillow", file=sys.stderr)
-    sys.exit(2)
+    Image = None
+    ImageDraw = None
+    ImageFont = None
+
+
+def _require_pillow():
+    if Image is None or ImageDraw is None or ImageFont is None:
+        print("error: Pillow is required. Install with: python3 -m pip install pillow", file=sys.stderr)
+        sys.exit(2)
+
+
+SPEC_HELP = """
+Spec JSON schema (minimal):
+{
+  "defaults": {
+    "auto_scale": true,
+    "outline": true,
+    "auto_fit": true,
+    "fit_mode": "luma",
+    "fit_threshold": 160,
+    "fit_target": "dark",
+    "fit_min_pixels": 30,
+    "fit_pad": 0
+  },
+  "annotations": [
+    {"type": "rect", "x": 120, "y": 80, "w": 160, "h": 40, "color": "#FF3B30"},
+    {"type": "arrow", "x1": 60, "y1": 140, "x2": 120, "y2": 100, "color": "#0A84FF"},
+    {"type": "text", "x": 130, "y": 90, "text": "Add button", "color": "#FFFFFF"},
+    {"type": "spotlight", "x": 110, "y": 70, "w": 190, "h": 60, "radius": 10}
+  ]
+}
+
+Notes:
+- auto-fit is enabled by default for rect/spotlight; disable with "fit": false or defaults.auto_fit=false.
+- anchor arrows/text by using id/nearest (optional):
+  {"type":"rect","id":"cta",...}, {"type":"text","text":"CTA","anchor":"cta"},
+  {"type":"arrow","from":"cta","to":"nearest"}
+"""
 
 
 def _parse_color(value: str):
@@ -640,11 +677,22 @@ def _load_spec(path: str) -> Dict:
 
 
 def main() -> int:
+    if "--spec-help" in sys.argv:
+        print(SPEC_HELP.strip())
+        return 0
+
     parser = argparse.ArgumentParser(description="Annotate an image with arrows, rectangles, and text.")
     parser.add_argument("input", help="Input PNG path")
     parser.add_argument("output", help="Output PNG path")
     parser.add_argument("--spec", required=True, help="JSON file path (or - for stdin)")
+    parser.add_argument("--spec-help", action="store_true", help="Print spec schema and exit")
     args = parser.parse_args()
+
+    if args.spec_help:
+        print(SPEC_HELP.strip())
+        return 0
+
+    _require_pillow()
 
     if not os.path.exists(args.input):
         print(f"error: input not found: {args.input}", file=sys.stderr)

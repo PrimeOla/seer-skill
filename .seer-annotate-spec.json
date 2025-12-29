@@ -1,0 +1,41 @@
+{
+  "defaults": {
+    "auto_scale": true,
+    "outline": true,
+    "text_bg": "rgba(0,0,0,0.6)"
+  },
+  "annotations": [
+    {
+      "type": "spotlight",
+      "x": 40,
+      "y": 735,
+      "w": 1720,
+      "h": 155,
+      "radius": 14,
+      "color": "rgba(0,0,0,0.3)"
+    },
+    {
+      "type": "rect",
+      "x": 40,
+      "y": 735,
+      "w": 1720,
+      "h": 155,
+      "color": "#FF9F0A"
+    },
+    {
+      "type": "arrow",
+      "x1": 130,
+      "y1": 630,
+      "x2": 85,
+      "y2": 785,
+      "color": "#FF9F0A"
+    },
+    {
+      "type": "text",
+      "x": 90,
+      "y": 605,
+      "text": "Option C: attached bar (match shell + radius)",
+      "color": "#FFFFFF"
+    }
+  ]
+}
