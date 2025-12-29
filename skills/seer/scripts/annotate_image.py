@@ -45,6 +45,7 @@ Spec JSON schema (minimal):
 
 Notes:
 - auto-fit is enabled by default for rect/spotlight; disable with "fit": false or defaults.auto_fit=false.
+- auto-fit snaps the original rect/spotlight to detected pixels (keeps size and recenters if detected area is smaller).
 - anchor arrows/text by using id/nearest (optional):
   {"type":"rect","id":"cta",...}, {"type":"text","text":"CTA","anchor":"cta"},
   {"type":"arrow","from":"cta","to":"nearest"}
@@ -255,6 +256,30 @@ def _expand_bbox(bbox, pad: float, image_size):
     if x1 <= x0 or y1 <= y0:
         return None
     return (x0, y0, x1, y1)
+
+
+def _snap_bbox_to_region(region, bbox, image_size):
+    if not bbox or not region:
+        return bbox
+    width, height = image_size
+    rx0, ry0, rx1, ry1 = region
+    bx0, by0, bx1, by1 = bbox
+    region_w = rx1 - rx0
+    region_h = ry1 - ry0
+    bbox_w = bx1 - bx0
+    bbox_h = by1 - by0
+    if region_w <= 0 or region_h <= 0:
+        return bbox
+    if bbox_w <= region_w and bbox_h <= region_h:
+        cx, cy = _target_center(bbox)
+        x0 = _clamp(int(round(cx - region_w / 2.0)), 0, width)
+        y0 = _clamp(int(round(cy - region_h / 2.0)), 0, height)
+        x1 = _clamp(int(round(x0 + region_w)), 0, width)
+        y1 = _clamp(int(round(y0 + region_h)), 0, height)
+        if x1 <= x0 or y1 <= y0:
+            return bbox
+        return (x0, y0, x1, y1)
+    return bbox
 
 
 def _normalize_anchor_spec(value):
@@ -484,8 +509,15 @@ def _apply_fit(ann: dict, image_rgb: Image.Image, defaults: Optional[dict]) -> d
     region_area = max(1.0, float((region[2] - region[0]) * (region[3] - region[1])))
     bbox_area = max(1.0, float((bbox[2] - bbox[0]) * (bbox[3] - bbox[1])))
     if bbox_area / region_area < min_coverage:
-        print(f"warn: fit({mode}) too small; using original bounds", file=sys.stderr)
-        return ann
+        snapped = _snap_bbox_to_region(region, bbox, image_rgb.size)
+        if snapped:
+            bbox = snapped
+            print(f"warn: fit({mode}) too small; snapping to detected center", file=sys.stderr)
+        else:
+            print(f"warn: fit({mode}) too small; using original bounds", file=sys.stderr)
+            return ann
+    else:
+        bbox = _snap_bbox_to_region(region, bbox, image_rgb.size)
     x0, y0, x1, y1 = bbox
     updated = dict(ann)
     updated["x"] = x0

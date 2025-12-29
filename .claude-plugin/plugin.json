@@ -6,5 +6,5 @@
     "name": "w00ing"
   },
   "repository": "https://github.com/w00ing/seer-skill",
-  "skills": ["seer"]
+  "skills": ["./skills/seer"]
 }
